@@ -10,7 +10,15 @@
 //
 //
 // -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
+Cypress.Commands.add("login", (email, password) => {
+  cy.session([email, password], () => {
+    cy.visit(
+      "https://pre-prod.tribl.app/?_vercel_share=NQK95DCxPvER41fbVTj3D2YfPIqGXfUe"
+    );
+    cy.get(".iubenda-cs-accept-btn").click();
+    cy.wait(5000);
+  });
+});
 //
 //
 // -- This is a child command --
