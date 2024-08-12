@@ -45,10 +45,15 @@ Then("User click on link", () => {
 });
 
 Then("User add random link", () => {
-  // cy.get("input[id='react-aria8693945485-:rf:']",{timeout:10000}).type("www.google.com");
-  cy.get("input").type("www.google.com");
+  cy.get(
+    "div[class='group flex flex-col w-full border-gray-300'] div[class='inline-flex w-full items-center h-full box-border group-data-[has-label=true]:items-end'] input",
+    { timeout: 10000 }
+  ).type("www.google.com");
+  // cy.get("input").type("www.google.com");
 });
 
 Then("User click on Add button", () => {
   cy.get("div[class='w-[100px] false'] button[type='button']").click();
 });
+
+

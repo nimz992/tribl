@@ -17,3 +17,4 @@ Feature: Visiting Tribl
         Then User click on link
         Then User add random link
         Then User click on Add button
+       
